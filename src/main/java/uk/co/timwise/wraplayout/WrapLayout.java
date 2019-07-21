@@ -1,7 +1,6 @@
 package uk.co.timwise.wraplayout;
 import java.awt.*;
-import javax.swing.JScrollPane;
-import javax.swing.SwingUtilities;
+import javax.swing.*;
 
 /**
  *  FlowLayout subclass that fully supports wrapping of components.
@@ -179,5 +178,17 @@ public class WrapLayout extends FlowLayout
 		}
 
 		dim.height += rowHeight;
+	}
+
+	public static void main(String[] args) {
+		JFrame frame = new JFrame();
+		frame.setLayout(new WrapLayout());
+
+		for (int i = 0; i < 10; i++) {
+			frame.add(new JButton(Integer.toString(i)));
+		}
+
+		frame.pack();
+		frame.setVisible(true);
 	}
 }
